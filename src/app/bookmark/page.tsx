@@ -27,7 +27,7 @@ function findElement(dom: HTMLElement, tagName: string): HTMLElement | null {
 function formatBookmark(el: HTMLElement): Bookmark[] {
     const result: Bookmark[] = [];
 
-    for (const child of el.children) {
+    el.children.forEach((child) => {
         if (child instanceof HTMLElement && child.tagName === "DT") {
             const titleNode = findElement(child, "H3");
             const aNode = findElement(child, "A");
@@ -51,7 +51,32 @@ function formatBookmark(el: HTMLElement): Bookmark[] {
                 });
             }
         }
-    }
+    })
+    // for (const child of el.children) {
+    //     if (child instanceof HTMLElement && child.tagName === "DT") {
+    //         const titleNode = findElement(child, "H3");
+    //         const aNode = findElement(child, "A");
+    //         const childNode = findElement(child, "DL");
+
+    //         if (titleNode && childNode) {
+    //             result.push({
+    //                 title: getTitle(titleNode),
+    //                 addAt: getAttribute(titleNode, "add_date"),
+    //                 updateAt: getAttribute(titleNode, "last_modified"),
+    //                 bookmarks: formatBookmark(childNode),
+    //             });
+    //         }
+    //         if (aNode) {
+    //             result.push({
+    //                 icon: getAttribute(aNode, "ICON"),
+    //                 title: getTitle(aNode),
+    //                 addAt: getAttribute(aNode, "add_date"),
+    //                 updateAt: getAttribute(aNode, "last_modified"),
+    //                 url: getAttribute(aNode, "href"),
+    //             });
+    //         }
+    //     }
+    // }
 
     return result;
 }
