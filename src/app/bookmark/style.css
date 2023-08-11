@@ -32,16 +32,24 @@
 .parsed-data {
     flex: 1; /* 撑满剩余空间 */
     width: 100%; /* 撑满水平方向 */
-    overflow: auto;
+    overflow: hidden;
     background-color: #f8f8f8;
     padding: 15px;
     border-radius: 4px;
     margin-top: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .parsed-data h2 {
     font-size: 20px;
     margin: 0 0 10px; /* 更新 margin */
+}
+
+.parsed-data .data {
+    flex: 1;
+    height: 100%;
+    overflow: auto;
 }
 
 pre {

@@ -1,6 +1,6 @@
 'use client'
 
-import React, { ChangeEvent, useState } from "react";
+import React, {ChangeEvent, useState} from "react";
 import './style.css';
 
 interface Bookmark {
@@ -115,7 +115,9 @@ export default function Page() {
             </header>
             <div className="parsed-data">
                 <h2>解析后的书签数据:</h2>
-                <pre>{JSON.stringify(parsedBookmarks || {}, null, 2)}</pre>
+                <div className="data">
+                    <pre>{JSON.stringify(parsedBookmarks || {}, null, 2)}</pre>
+                </div>
             </div>
         </div>
     );
