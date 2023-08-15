@@ -64,6 +64,20 @@
     font-weight: bold;
 }
 
+.guide-link {
+    margin-top: 20px;
+}
+
+.guide-link a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.guide-link a:hover {
+    text-decoration: underline;
+}
+
 .parsed-data {
     flex: 1;
     width: 100%;

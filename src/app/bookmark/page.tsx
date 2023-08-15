@@ -131,10 +131,19 @@ export default function Page() {
                     请按以下步骤导出并解析书签文件：
                 </p>
                 <ol className="guide-steps">
-                    <li>在浏览器中打开书签管理器。</li>
-                    <li>选择<span className="highlight-text">“导出书签”</span>选项并保存文件。</li>
-                    <li>返回本页面，点击下方的<span className="highlight-text">“选择文件”</span>按钮。</li>
+                    <li>打开浏览器中的书签管理器。</li>
+                    <li>选择<span className="highlight-text">“导出书签”</span>选项，并将文件保存到您的设备。</li>
+                    <li>回到本页面，点击下方的<span className="highlight-text">“选择文件”</span>按钮，选择您刚刚导出的书签文件。
+                    </li>
                 </ol>
+                <div className="guide-link">
+                    <p>
+                        想要了解完整的解析步骤？点击链接查看：<a
+                        href={"https://mp.weixin.qq.com/s/KIEWs62Rb-tBY0PIL3ORFA"}>
+                        掌握书签文件：高效管理你的收藏
+                    </a>
+                    </p>
+                </div>
             </div>)}
             <header className="header">
                 <input
