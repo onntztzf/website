@@ -1,6 +1,6 @@
 'use client'
 
-import React, {ChangeEvent, useState} from "react";
+import React, {ChangeEvent, useEffect, useState} from "react";
 import './style.css';
 
 interface Bookmark {
@@ -10,6 +10,16 @@ interface Bookmark {
     updateAt?: string;
     url?: string;
     bookmarks?: Bookmark[];
+}
+
+const initialPlaceholderBookmark: Bookmark = {
+    title: "Example",
+    bookmarks: [
+        {
+            title: "Example Bookmark",
+            url: "https://example.com",
+        },
+    ]
 }
 
 function getTitle(dom: HTMLElement): string {
@@ -79,23 +89,30 @@ async function readFileContent(file: File): Promise<string> {
 
 export default function Page() {
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
-    const [fileContent, setFileContent] = useState<string[]>([]);
-    const [parsedBookmarks, setParsedBookmarks] = useState<Bookmark | null>(null);
+    const [parsedBookmarks, setParsedBookmarks] = useState<Bookmark | null>(initialPlaceholderBookmark);
+    const [showGuide, setShowGuide] = useState(true);
+
+    const isFileSelected = !!selectedFile;
+    const isParsedBookmarksAvailable = !!parsedBookmarks;
+    const shouldShowGuide = !isFileSelected || !isParsedBookmarksAvailable;
+
+    useEffect(() => {
+        setShowGuide(shouldShowGuide);
+    }, [shouldShowGuide]);
 
     const handleFileChange = async (event: ChangeEvent<HTMLInputElement>) => {
         const file = event.target.files?.[0];
-        setSelectedFile(file || null);
 
         if (!file) {
-            console.log('文件选择失败');
+            setSelectedFile(null);
+            setParsedBookmarks(initialPlaceholderBookmark);
             return;
         }
 
+        setSelectedFile(file);
+
         try {
             const data = await readFileContent(file);
-            const lines = data.split('\n');
-            setFileContent(lines);
-
             const parsedData = parseBookmarkData(data);
             setParsedBookmarks(parsedData);
         } catch (error) {
@@ -105,6 +122,20 @@ export default function Page() {
 
     return (
         <div className="page-container">
+            {showGuide && (<div className="guide">
+                <h2>欢迎使用浏览器书签解析工具</h2>
+                <p>
+                    使用本工具，您可以将浏览器的书签文件解析成结构化数据。
+                </p>
+                <p className="guide-instructions">
+                    请按以下步骤导出并解析书签文件：
+                </p>
+                <ol className="guide-steps">
+                    <li>在浏览器中打开书签管理器。</li>
+                    <li>选择<span className="highlight-text">“导出书签”</span>选项并保存文件。</li>
+                    <li>返回本页面，点击下方的<span className="highlight-text">“选择文件”</span>按钮。</li>
+                </ol>
+            </div>)}
             <header className="header">
                 <input
                     type="file"

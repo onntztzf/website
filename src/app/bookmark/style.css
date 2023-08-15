@@ -1,4 +1,4 @@
-/* ...（前面的样式保持不变） */
+/* style.css */
 
 .page-container {
     display: flex;
@@ -29,9 +29,44 @@
     border-radius: 4px;
 }
 
+.guide {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.guide h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.guide p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.guide-instructions {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.guide-steps {
+    list-style: decimal;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.highlight-text {
+    color: #007bff;
+    font-weight: bold;
+}
+
 .parsed-data {
-    flex: 1; /* 撑满剩余空间 */
-    width: 100%; /* 撑满水平方向 */
+    flex: 1;
+    width: 100%;
     overflow: hidden;
     background-color: #f8f8f8;
     padding: 15px;
@@ -43,12 +78,11 @@
 
 .parsed-data h2 {
     font-size: 20px;
-    margin: 0 0 10px; /* 更新 margin */
+    margin: 0 0 10px;
 }
 
 .parsed-data .data {
     flex: 1;
-    height: 100%;
     overflow: auto;
 }
 
