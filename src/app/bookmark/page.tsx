@@ -1,7 +1,7 @@
-'use client'
+"use client"
 
 import React, {ChangeEvent, useEffect, useState} from "react";
-import './style.css';
+import "./style.css";
 
 interface Bookmark {
     icon?: string;
@@ -116,12 +116,12 @@ export default function Page() {
             const parsedData = parseBookmarkData(data);
             setParsedBookmarks(parsedData);
         } catch (error) {
-            console.error('处理文件时发生错误:', error);
+            console.error("处理文件时发生错误:", error);
         }
     };
 
     return (
-        <div className="page-container">
+        <div className="container">
             {showGuide && (<div className="guide">
                 <h2>欢迎使用浏览器书签解析工具</h2>
                 <p>

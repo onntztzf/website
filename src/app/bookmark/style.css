@@ -1,6 +1,6 @@
 /* style.css */
 
-.page-container {
+.container {
     display: flex;
     flex-direction: column;
     align-items: center;
