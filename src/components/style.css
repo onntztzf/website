@@ -16,7 +16,7 @@
 }
 
 .display-container .segment-x {
-    width: 72px;
+    width: 96px;
     left: 13px;
     border-bottom: 12px solid #000;
     border-left: 12px solid transparent;
@@ -33,7 +33,7 @@
 }
 
 .display-container .segment-y {
-    height: 72px;
+    height: 96px;
     width: 0;
     border-right: 12px solid #000;
     border-top: 12px solid transparent;
@@ -43,7 +43,7 @@
 .display-container .segment-y .segment-border {
     position: relative;
     left: 12px;
-    height: 72px;
+    height: 96px;
     margin-top: -12px;
     border-left: 12px solid #000;
     border-top: 12px solid transparent;
