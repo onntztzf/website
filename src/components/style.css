@@ -1,18 +1,8 @@
-
-
-.clear {
-    clear: both;
-}
-
-.display-container.display-size-12 {
-    margin-bottom: 24px;
-}
-
-
 .display-container {
+    width: 122px;
+    height: 220px;
     position: relative;
     margin-right: 24px;
-    float: left;
 }
 
 .display-container div.segment-x,
@@ -25,12 +15,7 @@
     position: absolute;
 }
 
-.display-container.display-size-12 {
-    width: 122px;
-    height: 220px;
-}
-
-.display-container.display-size-12 .segment-x {
+.display-container .segment-x {
     width: 72px;
     left: 13px;
     border-bottom: 12px solid #000;
@@ -38,7 +23,7 @@
     border-right: 12px solid transparent;
 }
 
-.display-container.display-size-12 .segment-x .segment-border {
+.display-container .segment-x .segment-border {
     top: 12px;
     left: -12px;
     right: -12px;
@@ -47,7 +32,7 @@
     border-right: 12px solid transparent;
 }
 
-.display-container.display-size-12 .segment-y {
+.display-container .segment-y {
     height: 72px;
     width: 0;
     border-right: 12px solid #000;
@@ -55,7 +40,7 @@
     border-bottom: 12px solid transparent;
 }
 
-.display-container.display-size-12 .segment-y .segment-border {
+.display-container .segment-y .segment-border {
     position: relative;
     left: 12px;
     height: 72px;
@@ -65,35 +50,35 @@
     border-bottom: 12px solid transparent;
 }
 
-.display-container.display-size-12 .segment-a {
+.display-container .segment-a {
     top: 0;
 }
 
-.display-container.display-size-12 .segment-b {
+.display-container .segment-b {
     top: 13px;
     left: 98px;
 }
 
-.display-container.display-size-12 .segment-c {
+.display-container .segment-c {
     top: 111px;
     left: 98px;
 }
 
-.display-container.display-size-12 .segment-d {
+.display-container .segment-d {
     top: 196px;
 }
 
-.display-container.display-size-12 .segment-e {
+.display-container .segment-e {
     top: 111px;
-    left: 0px;
+    left: 0;
 }
 
-.display-container.display-size-12 .segment-f {
+.display-container .segment-f {
     top: 13px;
-    left: 0px;
+    left: 0;
 }
 
-.display-container.display-size-12 .segment-g {
+.display-container .segment-g {
     top: 98px;
 }
 
@@ -102,38 +87,32 @@
 .display-no-1 .segment-e,
 .display-no-1 .segment-f,
 .display-no-1 .segment-g {
-    /*display: none;*/
     opacity: 0.1;
     filter: alpha(opacity=10);
 }
 
 .display-no-2 .segment-c,
 .display-no-2 .segment-f {
-    /*display: none;*/
     opacity: 0.1;
 }
 
 .display-no-3 .segment-e,
 .display-no-3 .segment-f {
-    /*display: none;*/
     opacity: 0.1;
 }
 
 .display-no-4 .segment-a,
 .display-no-4 .segment-d,
 .display-no-4 .segment-e {
-    /*display: none;*/
     opacity: 0.1;
 }
 
 .display-no-5 .segment-b,
 .display-no-5 .segment-e {
-    /*display: none;*/
     opacity: 0.1;
 }
 
 .display-no-6 .segment-b {
-    /*display: none;*/
     opacity: 0.1;
 }
 
@@ -141,49 +120,32 @@
 .display-no-7 .segment-e,
 .display-no-7 .segment-f,
 .display-no-7 .segment-g {
-    /*display: none;*/
     opacity: 0.1;
 }
 
-.display-no-8 {}
+.display-no-8 {
+}
 
 .display-no-9 .segment-e {
-    /*display: none;*/
     opacity: 0.1;
 }
 
 .display-no-0 .segment-g {
-    /*display: none;*/
     opacity: 0.1;
 }
-
-/* clock */
 
 #display-2, #display-4 {
     margin-right: 60px;
 }
 
-#vertical-center {
-    position: absolute;
-    height: 0;
-    top: 50%;
-    left: 50%
+#clock {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
 }
 
-#clock-container {
-    margin-top: -110px;
-    margin-left: -462px;
-    width: 924px;
-    height: 220px;
-}
-
-#clock-container .display-container:last-child {
+#clock .display-container:last-child {
     margin: 0;
-}
-
-#clock-container:after {
-    display: block;
-    content: '.';
-    visibility: hidden;
-    clear: both;
 }

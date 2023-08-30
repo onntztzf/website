@@ -17,7 +17,7 @@ const Clock: React.FC<Props> = () => {
             const d = new Date();
             const [h, m, s] = [d.getHours(), d.getMinutes(), d.getSeconds()].map((num) => zeroFill(num.toString(), 2));
 
-            const baseClass = 'display-container display-size-12 display-no-';
+            const baseClass = 'display-container display-no-';
 
             for (let i = 0; i < 6; i++) {
                 const display = document.getElementById(displays[i]);
@@ -54,20 +54,18 @@ const Clock: React.FC<Props> = () => {
     }, []);
 
     return (
-        <div id="vertical-center">
-            <div id="clock-container">
-                {displays.map((displayId, index) => (
-                    <div key={index} id={displayId} className={`display-container display-size-12 display-no-${index}`}>
-                        {'abcdefg'.split('').map((segment) => (
-                            <div
-                                key={segment}
-                                className={`segment-${segment} segment-${'adg'.includes(segment) ? 'x' : 'y'}`}>
-                                <span className="segment-border"></span>
-                            </div>
-                        ))}
-                    </div>
-                ))}
-            </div>
+        <div id="clock">
+            {displays.map((displayId, index) => (
+                <div key={index} id={displayId} className={`display-container display-no-${index}`}>
+                    {'abcdefg'.split('').map((segment) => (
+                        <div
+                            key={segment}
+                            className={`segment-${segment} segment-${'adg'.includes(segment) ? 'x' : 'y'}`}>
+                            <span className="segment-border"></span>
+                        </div>
+                    ))}
+                </div>
+            ))}
         </div>
     );
 };
