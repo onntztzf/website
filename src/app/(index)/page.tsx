@@ -3,10 +3,10 @@ import "./style.css";
 
 const Clock = dynamic(() => import("@/components/clock"), {ssr: false})
 
-export default function Index() {
+export default function Page() {
     return (
         <div className="index">
-             <Clock/>
+            <Clock/>
         </div>
     );
 }
