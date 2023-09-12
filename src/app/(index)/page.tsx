@@ -1,8 +1,7 @@
 import dynamic from "next/dynamic"
-import "./style.css";
 import {Box, Kbd} from "@radix-ui/themes";
 
-const Clock = dynamic(() => import("@/components/clock"), {ssr: false})
+const Clock = dynamic(() => import("@/components/clock/clock"), {ssr: false})
 
 export default function Page() {
     return (
